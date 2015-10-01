@@ -15,3 +15,16 @@ dataSource.discoverAndBuildModels('event', {schema: 'public'},
     dataSource.disconnect();
   });
 });
+
+dataSource.discoverAndBuildModels('user', {schema: 'public'},
+    function(err, models) {
+  if (err) throw err;
+
+  models.User.find(function(err, users) {
+    if (err) return console.log(err);
+
+    console.log(users);
+
+    dataSource.disconnect();
+  });
+});

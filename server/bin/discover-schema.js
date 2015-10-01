@@ -11,3 +11,12 @@ dataSource.discoverSchema('event', {schema: 'public'},
 
   dataSource.disconnect();
 });
+
+dataSource.discoverSchema('user', {schema: 'public'},
+    function(err, schema) {
+  if (err) throw err;
+
+  console.log(JSON.stringify(schema, null, '  '));
+
+  dataSource.disconnect();
+});
