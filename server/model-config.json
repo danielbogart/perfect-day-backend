@@ -35,5 +35,9 @@
   "Event": {
     "dataSource": "perfectDay",
     "public": true
+  },
+  "Person": {
+    "dataSource": "perfectDay",
+    "public": true
   }
 }

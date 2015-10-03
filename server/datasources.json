@@ -4,11 +4,11 @@
     "connector": "memory"
   },
   "perfectDay": {
-    "name": "perfectDay",
-    "connector": "postgresql",
     "host": "localhost",
     "port": 5432,
     "database": "perfectDay",
-    "username": "MasterBogart"
+    "username": "MasterBogart",
+    "name": "perfectDay",
+    "connector": "postgresql"
   }
 }

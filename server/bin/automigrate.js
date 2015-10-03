@@ -3,23 +3,29 @@ var app = require(path.resolve(__dirname, '../server'));
 
 var events = [
   {
-    time: '8',
-    description: 'Eat a fuckin breakfast burrito'
+    time: 8,
+    description: 'Eat a fuckin breakfast burrito',
+    personId: 1
   },
   {
-    time: '9',
-    description: 'Get pitted'
+    time: 9,
+    description: 'Get pitted',
+    personId: 1
   }
 ];
 
-var users = [
+var people = [
   {
     email: 'test@test.com',
-    password: 'test'
+    firstName: 'Daniel',
+    password: 'test',
+    dayPublic: true
   },
   {
     email: 'test2@test.com',
-    password: 'test'
+    firstName: 'Cru',
+    password: 'test',
+    dayPublic: true
   }
 ];
 
@@ -47,14 +53,14 @@ dataSource.automigrate('Event', function(err) {
   });
 });
 
-dataSource.automigrate('User', function(err) {
+dataSource.automigrate('Person', function(err) {
   if (err) console.log(err);
 
-  var User = app.models.User;
-  var count = users.length;
+  var Person = app.models.Person;
+  var count = people.length;
 
-  users.forEach(function(user) {
-    User.create(user, function(err, record) {
+  people.forEach(function(user) {
+    Person.create(user, function(err, record) {
       if (err) return console.log(err);
 
       console.log('Record created:', record);
